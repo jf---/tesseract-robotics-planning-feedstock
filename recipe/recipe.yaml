@@ -3,8 +3,8 @@ schema_version: 1
 context:
   # dev track: upstream main at a pinned SHA. `.dev<commit date>` sorts below the
   # next release (0.36.0.dev20260929 < 0.36.0), so the 0.36.0 package supersedes it.
-  version: "0.36.0.dev20260929"
-  upstream_sha: "4efed5f5f92eb674854b0ff6cb511fdf6b72f42a"
+  version: "0.36.0.dev20261014"
+  upstream_sha: "a6483823830c8cf145370bc79f1ac260cac1f807"
 
 package:
   name: tesseract-robotics-planning
@@ -12,11 +12,11 @@ package:
 
 source:
   - url: https://github.com/tesseract-robotics/tesseract_planning/archive/${{ upstream_sha }}.tar.gz
-    sha256: d0ab2dce3a989688689c1abfb1ec18523b607b97720aa53fa8ea18a71898bcbf
+    sha256: 06ba7608ac83ab83f9e3fd42c9f0d3a6b67237a2c7923910e4f91069e0ee767e
     file_name: source.tar.gz
 
 build:
-  number: 1
+  number: 0
 
 
 requirements:
@@ -102,6 +102,8 @@ tests:
       include:
         - tesseract/command_language/fwd.h
         - tesseract/motion_planners/fwd.h
+        - tesseract/motion_planners/trajopt/profile/trajopt_piqp_solver_profile.h
+        - tesseract/motion_planners/trajopt_ifopt/profile/trajopt_ifopt_piqp_solver_profile.h
         - tesseract/task_composer/fwd.h
         - tesseract/time_parameterization/fwd.h
       lib:

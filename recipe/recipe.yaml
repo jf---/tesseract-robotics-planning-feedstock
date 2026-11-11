@@ -16,7 +16,7 @@ source:
     file_name: source.tar.gz
 
 build:
-  number: 0
+  number: 1
 
 
 requirements:
@@ -59,7 +59,9 @@ requirements:
     - taskflow <4
     - tesseract-robotics
     - descartes-light
-    - trajopt
+    # build 3: the first with an exact run_exports pin, so this build runs only against the
+    # trajopt layout it compiled with (patch 0004 adds row_map_ to the joint difference constraints)
+    - trajopt ==0.36.0.dev20261013 *_3
     - libruckig
     - if: unix
       then:
